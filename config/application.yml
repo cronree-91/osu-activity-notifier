@@ -1,0 +1,9 @@
+bot:
+  setting:
+    token: ""
+    ownerId: ""
+
+mongodb:
+  uri: mongodb://localhost:27017
+  database: development_blue
+  ssl: false
