@@ -24,7 +24,7 @@ public class Bot {
     CommandManager commandManager;
 
     @Autowired
-    List<Listener> listeners;
+    GeneralListener generalListener;
 
     @Value("${bot.setting.ownerId}")
     String ownerId;
@@ -60,6 +60,6 @@ public class Bot {
                 .setEnableShutdownHook(true)
                 .addEventListeners(eventWaiter)
                 .setActivity(Activity.playing("準備中... / Loading..."))
-                .addEventListeners(listeners.toArray(new Listener[0]));
+                .addEventListeners(generalListener);
     }
 }

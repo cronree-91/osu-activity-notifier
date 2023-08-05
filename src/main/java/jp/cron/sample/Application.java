@@ -20,9 +20,4 @@ public class Application {
         return new RestTemplate();
     }
 
-//    @Bean
-//    public Gson gson() {
-//        return new Gson();
-//    }
-
 }
