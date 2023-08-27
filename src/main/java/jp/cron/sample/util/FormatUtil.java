@@ -37,11 +37,11 @@ public class FormatUtil {
                 .build();
     }
 
-    public static MessageEmbed generateOsuScoreEmbed(OsuScore score) {
+    public static MessageEmbed generateOsuScoreEmbed(String userId, OsuScore score) {
 
         return new EmbedBuilder()
-                .setTitle("`"+score.beatmapset.title+"`")
-                .setDescription("[譜面]("+score.beatmap.url+")\n[ユーザ](https://osu.ppy.sh/u/"+score.user.id+")")
+                .setTitle("`"+score.beatmapset.title+" ["+score.beatmap.version+"]`")
+                .setDescription("<@"+userId+">\n[譜面]("+score.beatmap.url+")\n[ユーザ](https://osu.ppy.sh/u/"+score.user.id+")")
                 .setThumbnail(score.beatmapset.covers.list2x)
                 .setFooter(score.user.username, score.user.avatar_url)
                 .addField("譜面☆", score.beatmap.difficulty_rating.toString(), true)
@@ -53,7 +53,5 @@ public class FormatUtil {
                 .addField("MOD", score.mods.isEmpty() ? "なし" : Strings.join(score.mods, ' '), true)
                 .addField("PP", score.pp==null ? "なし" : String.format("%.2f", score.pp), true)
                 .build();
-
-
     }
 }

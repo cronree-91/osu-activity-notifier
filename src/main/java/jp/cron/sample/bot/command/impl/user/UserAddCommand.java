@@ -29,7 +29,6 @@ public class UserAddCommand extends UserSubCommand {
                 new OptionData(OptionType.USER, "user", "Discordユーザ", true),
                 new OptionData(OptionType.STRING, "osu-user", "osuユーザID", true)
         );
-        this.ownerCommand = true;
     }
 
     @Autowired

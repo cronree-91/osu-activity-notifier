@@ -22,7 +22,6 @@ public class UserDeleteCommand extends UserSubCommand {
         this.options = List.of(
                 new OptionData(OptionType.USER, "user", "Discordユーザ", true)
         );
-        this.ownerCommand = true;
     }
 
     @Autowired

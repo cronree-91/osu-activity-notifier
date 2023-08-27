@@ -7,7 +7,7 @@ plugins {
 
 group = 'jp.cron.sample'
 version = System.getenv("VERSION") ?: "UNKNOWN"
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
 
 configurations {
     compileOnly {
@@ -55,5 +55,5 @@ dependencies {
 
 
 tasks.named("bootBuildImage") {
-    imageName = 'registry.cron.jp/coconala/0:latest'
+    imageName = 'registry.cron.jp/osu-notifier:latest'
 }

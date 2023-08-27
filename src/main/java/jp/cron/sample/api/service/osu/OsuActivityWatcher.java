@@ -56,13 +56,13 @@ public class OsuActivityWatcher implements ILogger {
                 if (last.before(score.created_at)) {
 
                     lastActivity.put(user.id, score.created_at);
-                    MessageEmbed embed = FormatUtil.generateOsuScoreEmbed(score);
+                    MessageEmbed embed = FormatUtil.generateOsuScoreEmbed(user.id, score);
                     jda.getTextChannelById(channelId).sendMessage(
                                     new MessageCreateBuilder()
-                                            .setContent("@silent <@"+user.id+">")
                                             .addEmbeds(embed)
                                             .build()
-                            ).queue();
+                            )
+                            .queue();
 
                 }
             }

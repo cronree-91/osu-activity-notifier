@@ -28,6 +28,7 @@ public class OsuScore {
         public Integer bpm;
         public Integer total_length;
         public String url;
+        public String version;
     }
     public static class OsuBeatMapSet {
         public Integer id;
